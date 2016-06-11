@@ -37,19 +37,10 @@
 @endsection
 
 @section('breadcrumb')
-<li>
-    <a href="{{route('homePage')}}">Home</a>
-    <i class="fa fa-circle"></i>
-</li>
-<li>
-    <a href="{{route('productionOrders')}}">Üretim Emirleri</a>
-    <i class="fa fa-circle"></i>
-</li>
-<li>
-	<a href="{{route('showProductionOrder', $detail['production_order_id'])}}">{{$detail->getEmir['production_order_code']}}</a>
-	<i class="fa fa-circle"></i>
-</li>
-<li>
-    <span>Parça Ayırt Et</span>
-</li>
+{{breadcrumb([
+    ['Home', 'homePage'],
+    ['Üretim Emirleri', 'productionOrders'],
+    [$detail->getEmir['production_order_code'], 'showProductionOrder', $detail['production_order_id']],
+    ['Parça Ayırt Et']
+])}}
 @endsection

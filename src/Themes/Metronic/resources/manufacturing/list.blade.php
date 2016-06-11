@@ -54,13 +54,10 @@
 @endsection
 
 @section('breadcrumb')
-<li>
-    <a href="{{route('homePage')}}">Home</a>
-    <i class="fa fa-circle"></i>
-</li>
-<li>
-    <a href="{{route('productionOrders')}}">Üretim Emirleri</a>
-</li>
+{{breadcrumb([
+    ['Home', 'homePage'],
+    ['Üretim Emirleri']
+])}}
 @endsection
 
 @section('ekjs')

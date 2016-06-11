@@ -52,21 +52,12 @@
 @endsection
 
 @section('breadcrumb')
-<li>
-    <a href="{{route('homePage')}}">Home</a>
-    <i class="fa fa-circle"></i>
-</li>
-<li>
-    <a href="{{route('lots')}}">Lotlar</a>
-    <i class="fa fa-circle"></i>
-</li>
-<li>
-    <a href="{{route('inventory')}}">Depo</a>
-    <i class="fa fa-circle"></i>
-</li>
-<li>
-    <span>{{$partDetail['title']}} Tanımlı Lotlar</span>
-</li>
+{{breadcrumb([
+    ['Home', 'homePage'],
+    ['Lotlar', 'lots'],
+    ['Depo', 'inventory'],
+    [$partDetail['title'] . ' Tanımlı Lotlar']
+])}}
 @endsection
 
 @section('ekjs')

@@ -38,6 +38,10 @@
 @endsection
 
 @section('breadcrumb')
+{{breadcrumb([
+    ['Home', 'homePage'],
+    []
+])}}
 <li>
     <a href="{{route('homePage')}}">Home</a>
     <i class="fa fa-circle"></i>

@@ -211,17 +211,11 @@ if (App.isAngularJsApp() === false) {
 @endsection
 
 @section('breadcrumb')
-<li>
-    <a href="{{route('homePage')}}">Home</a>
-    <i class="fa fa-circle"></i>
-</li>
-<li>
-    <a href="{{route('productionOrders')}}">Üretim Emirleri</a>
-    <i class="fa fa-circle"></i>
-</li>
-<li>
-	<span>{{$detail['production_order_code']}}</span>
-</li>
+{{breadcrumb([
+    ['Home', 'homePage'],
+    ['Üretim Emirleri', 'productionOrders'],
+    [$detail['production_order_code']]
+])}}
 @endsection
 
 @section('pageToolBar')

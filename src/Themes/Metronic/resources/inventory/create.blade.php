@@ -28,15 +28,9 @@
 @endsection
 
 @section('breadcrumb')
-<li>
-    <a href="{{route('homePage')}}">Home</a>
-    <i class="fa fa-circle"></i>
-</li>
-<li>
-    <a href="{{route('lots')}}">Lotlar</a>
-    <i class="fa fa-circle"></i>
-</li>
-<li>
-    <span>Yeni</span>
-</li>
+{{breadcrumb([
+	['Hoem', 'homePage'],
+	['Lotlar', 'lots'],
+	['Yeni']
+])}}
 @endsection

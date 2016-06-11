@@ -279,3 +279,35 @@
 					</div>';
 		}
 	}
+
+	if (!function_exists('breadcrumb')) {
+		function breadcrumb($array) {
+			$string = '';
+			$count = count($array);
+
+			$i = 1;
+			foreach($array as $e) {
+				if($i==$count) {
+					if(isset($e[1])) {
+						if($e[1]!='#') {
+							$string .= '<li><a href="'.route($e[1], isset($e[2]) ? $e[2] : null).'">'.$e[0].'</a></li>';
+						} else {
+							$string .= '<li><a href="#">'.$e[0].'</a></li>';
+						}
+					} else {
+						$string .= '<li><span>'.$e[0].'</span></li>';
+					}
+				} else {
+					if($e[1]!='#') {
+				    	$string .= '<li><a href="'.route($e[1], isset($e[2]) ? $e[2] : null).'">'.$e[0].'</a>';
+					} else {
+						$string .= '<li><a href="#">'.$e[0].'</a>';
+					}
+				    $string .= '<i class="fa fa-circle"></i></li>';
+				}
+				$i++;
+			}
+
+			return $string;
+		}
+	}
