@@ -28,17 +28,17 @@
 
 @section('breadcrumb')
 <li>
-    <a href="{{route('homePage')}}">Home</a>
-    <i class="fa fa-circle"></i>
+	<a href="{{route('homePage')}}">Home</a>
+	<i class="fa fa-circle"></i>
 </li>
 <li>
-    <a href="#">Üretim</a>
-    <i class="fa fa-circle"></i>
+	<a href="#">Üretim</a>
+	<i class="fa fa-circle"></i>
 </li>
 <li>
 	<a href="{{route('parts')}}">Parçalar</a>
 	<i class="fa fa-circle"></i>
 <li>
-    <span>Yeni</span>
+	<span>Yeni</span>
 </li>
 @endsection

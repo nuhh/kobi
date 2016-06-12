@@ -9,6 +9,23 @@
 
 		function register() {
 
+	        $this->app['command.zahmesizce.setup'] = $this->app->share(
+	            function ($app) {
+	                return new Commands\SetupDatabase();
+	            }
+	        );
+
+	        $this->app['command.zahmetsizce.demo'] = $this->app->share(
+	            function ($app) {
+	                return new Commands\CreateDemo();
+	            }
+	        );
+
+	        $this->commands([
+	        	'command.zahmetsizce.setup',
+	        	'command.zahmetsizce.demo'
+	        ]);
+
 		}
 
 		function boot() {
@@ -55,7 +72,8 @@ EOT
 			if(file_exists(__DIR__.'/Themes/'.config('zahmetsizce.general.theme').'/helpers.php'))
 				require __DIR__.'/Themes/'.config('zahmetsizce.general.theme').'/helpers.php';
 
-			require __DIR__.'/helpers.php';
+			if(file_exists(__DIR__.'/helpers.php'))
+				require __DIR__.'/helpers.php';
 		}
 
 	}

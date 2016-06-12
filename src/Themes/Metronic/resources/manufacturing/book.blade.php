@@ -38,9 +38,9 @@
 
 @section('breadcrumb')
 {{breadcrumb([
-    ['Home', 'homePage'],
-    ['Üretim Emirleri', 'productionOrders'],
-    [$detail->getEmir['production_order_code'], 'showProductionOrder', $detail['production_order_id']],
-    ['Parça Ayırt Et']
+	['Home', 'homePage'],
+	['Üretim Emirleri', 'productionOrders'],
+	[$detail->getEmir['production_order_code'], 'showProductionOrder', $detail['production_order_id']],
+	['Parça Ayırt Et']
 ])}}
 @endsection

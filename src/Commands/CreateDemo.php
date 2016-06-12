@@ -2,6 +2,8 @@
 
 	namespace Zahmetsizce\Commands;
 
+	use Illuminate\Console\Command;
+
 	use Zahmetsizce\Facades\PredefineProductionOrder;
 	use Zahmetsizce\Facades\BomComposedParts;
 	use Zahmetsizce\Facades\BomNeededParts;
@@ -25,8 +27,11 @@
 	/**
 	 * Demo veritabanı oluşturmaya yarayan komut
 	 */
-	class CreateDemo
+	class CreateDemo extends Command
 	{
+
+    	protected $signature = 'demo';
+
 		/**
 		 * Komutta çalışan method
 		 *

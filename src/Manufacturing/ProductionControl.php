@@ -53,14 +53,11 @@
 			# Genel ilerleme kayıt altına alınıyor.
 			$this->generalProgress = GPOPP::fromProductionOrderId($productionOrderId);
 
-
-			//print_r($this->generalProgress);
-
 			foreach ($this->generalProgress as $mainPartId => $subParts) {
 				if (!array_key_exists($mainPartId, $this->total)) {
 					$this->total[$mainPartId] = [];
 				}
-				foreach ($subParts as $key => $subPartId) {
+				foreach ($subParts as $subPartId) {
 					if (!in_array($subPartId, $this->total[$mainPartId])) {
 						$this->total[$mainPartId][] = $subPartId;
 						if (array_key_exists($subPartId, $this->generalProgress)) {
@@ -70,18 +67,17 @@
 				}
 			}
 
-			//print_r($this->total);
-
 			$this->work();
-
-			return true;
 		}
 
+
 		public function workAgain($mainPartId, $subPartId) {
-			foreach ($this->generalProgress[$subPartId] as $key => $subId) {
-				$this->total[$mainPartId][] = $subPartId;
-				if (array_key_exists($subPartId, $this->generalProgress)) {
-					$this->workAgain($mainPartId, $subPartId);
+			foreach ($this->generalProgress[$subPartId] as $subId) {
+				if (!array_key_exists($subPartId, $this->total)) {
+					$this->total[$subPartId] = [];
+				}
+				if (array_key_exists($subId, $this->generalProgress)) {
+					$this->workAgain($subPartId, $subId);
 				}
 			}
 		}
@@ -150,7 +146,7 @@
 
 					foreach (POCP::where('production_order_id', $this->productionOrderId)->get() as $k) {
 						$v = [
-							'lot_code'	=> 'L-U-'.TableLots::all()->count().'-'.str_random(8),
+							'lot_code'	=> 'L-U-'.Lots::all()->count().'-'.str_random(8),
 							'part_id'	=> $k['part_id'],
 							'quantity'	=> $e['quantity']
 						];

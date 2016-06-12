@@ -135,38 +135,38 @@
 
 @section('breadcrumb')
 {{breadcrumb([
-    ['Home', 'homePage'],
-    ['Üretim', '#'],
-    ['Ürün Ağaçları', 'boms'],
-    [$detail['title']]
+	['Home', 'homePage'],
+	['Üretim', '#'],
+	['Ürün Ağaçları', 'boms'],
+	[$detail['title']]
 ])}}
 @endsection
 
 @section('pageToolBar')
 <div class="page-toolbar">
-    <div class="btn-group pull-right">
-        <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> İşlemler
-            <i class="fa fa-angle-down"></i>
-        </button>
-        <ul class="dropdown-menu pull-right" role="menu">
-        	<li>
-        		 <a data-toggle="modal" href="#sil">
-        		 	<i class="icon-trash"></i> Sil </a>
-        	</li>
-            <li>
-                <a href="{{route('editBom', $detail['id'])}}">
-                    <i class="icon-bell"></i> Düzenle </a>
-            </li>
-            <li>
-            	<a href="{{route('addComposedPartToBom', $detail['id'])}}">
-            		<i class="icon-star"></i> Oluşan Parça Ekle </a>
-           	</li>
-            <li>
-            	<a href="{{route('addNeededPartToBom', $detail['id'])}}">
-            		<i class="icon-star"></i> Gerekli Parça Ekle </a>
-           	</li>
-        </ul>
-    </div>
+	<div class="btn-group pull-right">
+		<button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> İşlemler
+			<i class="fa fa-angle-down"></i>
+		</button>
+		<ul class="dropdown-menu pull-right" role="menu">
+			<li>
+				 <a data-toggle="modal" href="#sil">
+				 	<i class="icon-trash"></i> Sil </a>
+			</li>
+			<li>
+				<a href="{{route('editBom', $detail['id'])}}">
+					<i class="icon-bell"></i> Düzenle </a>
+			</li>
+			<li>
+				<a href="{{route('addComposedPartToBom', $detail['id'])}}">
+					<i class="icon-star"></i> Oluşan Parça Ekle </a>
+		   	</li>
+			<li>
+				<a href="{{route('addNeededPartToBom', $detail['id'])}}">
+					<i class="icon-star"></i> Gerekli Parça Ekle </a>
+		   	</li>
+		</ul>
+	</div>
 </div>
 {{modal('sil', 'deleteBom', $detail['id'])}}
 @endsection

@@ -28,22 +28,10 @@
 
 @section('breadcrumb')
 {{breadcrumb([
-    ['Home', 'homePage'],
-    ['Üretim', '#'],
-    ['asd']
+	['Home', 'homePage'],
+	['Üretim', '#'],
+	['Ürün Ağaçları', 'boms'],
+	[$detail['title'], 'showBom', $detail['id']],
+	['Rota Tanımla']
 ])}}
-<li>
-    <a href="{{route('homePage')}}">Home</a>
-    <i class="fa fa-circle"></i>
-</li>
-<li>
-    <a href="#">Üretim</a>
-    <i class="fa fa-circle"></i>
-</li>
-<li>
-	<a href="{{route('parts')}}">Parçalar</a>
-	<i class="fa fa-circle"></i>
-<li>
-    <span>Yeni</span>
-</li>
 @endsection

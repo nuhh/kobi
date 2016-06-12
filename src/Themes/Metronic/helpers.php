@@ -51,7 +51,7 @@
 		 */
 		function submit($text, $value=null, $name = null)
 		{
-			return Form::submit($text, ['class' => 'btn blue', 'value' => $value, 'name' => $name]);
+			return Form::submit($text, ['class' => 'btn green', 'value' => $value, 'name' => $name]);
 		}
 	}
 
@@ -91,7 +91,7 @@
 		 */
 		function show($route, $detail=null)
 		{
-			return '<a class="btn default btn-xs blue" href="'.route($route, $detail).'"><i class="fa fa-search"></i> İncele</a>';
+			return '<a class="btn default btn-xs green" href="'.route($route, $detail).'"><i class="fa fa-search"></i> İncele</a>';
 		}
 	}
 
@@ -287,10 +287,15 @@
 
 			$i = 1;
 			foreach($array as $e) {
+				if(isset($e[2])) {
+					$routeDetail = $e[2];
+				} else {
+					$routeDetail = null;
+				}
 				if($i==$count) {
 					if(isset($e[1])) {
 						if($e[1]!='#') {
-							$string .= '<li><a href="'.route($e[1], isset($e[2]) ? $e[2] : null).'">'.$e[0].'</a></li>';
+							$string .= '<li><a href="'.route($e[1], $routeDetail).'">'.$e[0].'</a></li>';
 						} else {
 							$string .= '<li><a href="#">'.$e[0].'</a></li>';
 						}
@@ -299,7 +304,7 @@
 					}
 				} else {
 					if($e[1]!='#') {
-				    	$string .= '<li><a href="'.route($e[1], isset($e[2]) ? $e[2] : null).'">'.$e[0].'</a>';
+				    	$string .= '<li><a href="'.route($e[1], $routeDetail).'">'.$e[0].'</a>';
 					} else {
 						$string .= '<li><a href="#">'.$e[0].'</a>';
 					}

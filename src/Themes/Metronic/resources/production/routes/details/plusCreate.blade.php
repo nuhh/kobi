@@ -28,10 +28,10 @@
 
 @section('breadcrumb')
 {{breadcrumb([
-    ['Home', 'homePage'],
-    ['Üretim', '#'],
-    ['Rotasyonlar', 'routes'],
-    [$detail->getRoute['title'], 'showRoute', $detail['route_id']],
-    ['Yeni İşlem']
+	['Home', 'homePage'],
+	['Üretim', '#'],
+	['Rotasyonlar', 'routes'],
+	[$detail['title'], 'showRoute', $detail['id']],
+	['Yeni İşlem']
 ])}}
 @endsection

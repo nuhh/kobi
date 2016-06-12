@@ -2,16 +2,19 @@
 
 	namespace Zahmetsizce\Commands;
 
+	use Illuminate\Console\Command;
+
 	use Illuminate\Support\Facades\Schema;
 	use Illuminate\Support\Facades\DB;
-
-	use Zahmetsizce\General\General;
 
 	/**
 	 * Veritabanı kurulumunu yapan sınıfı
 	 */
-	class SetupDatabase extends General
+	class SetupDatabase extends Command
 	{
+
+    	protected $signature = 'setup';
+    	
 		/**
 		 * Sınıfın ana methodu
 		 *

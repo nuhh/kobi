@@ -206,5 +206,10 @@
 	);
 
 	Route::get('asd', function() {
-		Zahmetsizce\Facades\ProductionControl::fire(5);
+		$n = new Zahmetsizce\Manufacturing\ProductionControl;
+		dd($n->fire(17));
+	});
+
+	Route::get('asdd', function() {
+		dd(Zahmetsizce\Facades\ProductionControl::fire(17));
 	});

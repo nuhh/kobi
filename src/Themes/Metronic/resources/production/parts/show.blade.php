@@ -62,34 +62,34 @@
 
 @section('breadcrumb')
 {{breadcrumb([
-    ['Home', 'homePage'],
-    ['Üretim', '#'],
-    ['Parçalar', 'parts'],
-    [$detail['title']]
+	['Home', 'homePage'],
+	['Üretim', '#'],
+	['Parçalar', 'parts'],
+	[$detail['title']]
 ])}}
 @endsection
 
 @section('pageToolBar')
 <div class="page-toolbar">
-    <div class="btn-group pull-right">
-        <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> İşlemler
-            <i class="fa fa-angle-down"></i>
-        </button>
-        <ul class="dropdown-menu pull-right" role="menu">
-        	<li>
-        		 <a data-toggle="modal" href="#sil">
-        		 	<i class="icon-trash"></i> Sil </a>
-        	</li>
-            <li>
-                <a href="{{route('editPart', $detail['id'])}}">
-                    <i class="icon-bell"></i> Düzenle </a>
-            </li>
-            <li>
-            	<a href="{{route('defineBomToPart', $detail['id'])}}">
-            		<i class="icon-star"></i> Ürün Ağacı Tanımla </a>
-           	</li>
-        </ul>
-    </div>
+	<div class="btn-group pull-right">
+		<button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> İşlemler
+			<i class="fa fa-angle-down"></i>
+		</button>
+		<ul class="dropdown-menu pull-right" role="menu">
+			<li>
+				 <a data-toggle="modal" href="#sil">
+				 	<i class="icon-trash"></i> Sil </a>
+			</li>
+			<li>
+				<a href="{{route('editPart', $detail['id'])}}">
+					<i class="icon-bell"></i> Düzenle </a>
+			</li>
+			<li>
+				<a href="{{route('defineBomToPart', $detail['id'])}}">
+					<i class="icon-star"></i> Ürün Ağacı Tanımla </a>
+		   	</li>
+		</ul>
+	</div>
 </div>
 {{modal('sil', 'deletePart', $detail['id'])}}
 @endsection
