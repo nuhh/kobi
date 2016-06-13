@@ -44,8 +44,8 @@
 			$musteri = 45;
 			$siparis = 100;
 			$OrderDetails = 250;
-			$lot = 100;
-			$emir = 50;
+			$lot = 5000;
+			$emir = 500;
 
 
 			$faker = \Faker\Factory::create();
@@ -54,7 +54,7 @@
 			$musteriSayisi = $musteri;
 			$siparisSayisi = $siparis;
 			$siparisDetaySayisi = $OrderDetails;
-			$adetler = [1,2,3,4,5,10,20,25,30,50,100,250,500,600,1000];
+			$adetler = [1,2,3,4,5,10,20,25,30,50,100,250,500,600,1000,15,35,40,45,75,85,80,300,350];
 			$lotSayisi = $lot;
 			$emirSayisi = $emir;
 
@@ -412,5 +412,7 @@
 			$farki = $end-$start;
 			$dakika = floor($farki/60);
 			if ($farki<60) $saniye = $farki; else $saniye = $farki%60;
+
+			$this->info($dakika . ' dakika,'. $saniye . ' saniye');
 		}
 	}

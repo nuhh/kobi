@@ -1,5 +1,6 @@
 <?php
 
 	return [
-		'theme' => 'Metronic'
+		'theme' => 'Metronic',
+		'decimal' => 0
 	];

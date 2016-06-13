@@ -8,8 +8,18 @@
 	{
 
 		function register() {
+			$this->registerCommands();
+		}
 
-	        $this->app['command.zahmesizce.setup'] = $this->app->share(
+		function boot() {
+			$this->loadConfig();
+			$this->loadHttp();
+			$this->loadView();
+		}
+
+		function registerCommands()
+		{
+	        $this->app['command.zahmetsizce.setup'] = $this->app->share(
 	            function ($app) {
 	                return new Commands\SetupDatabase();
 	            }
@@ -25,14 +35,8 @@
 	        	'command.zahmetsizce.setup',
 	        	'command.zahmetsizce.demo'
 	        ]);
-
 		}
 
-		function boot() {
-			$this->loadConfig();
-			$this->loadHttp();
-			$this->loadView();
-		}
 
 		public function loadConfig()
 		{

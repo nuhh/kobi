@@ -211,5 +211,5 @@
 	});
 
 	Route::get('asdd', function() {
-		dd(Zahmetsizce\Facades\ProductionControl::fire(17));
+		Zahmetsizce\Facades\ProductionControl::fire(4);
 	});

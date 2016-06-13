@@ -29,7 +29,7 @@
 {{breadcrumb([
 	['Home', 'homePage'],
 	['Üretim', '#'],
-	['Ürün Ağaçları', 'boms']
+	['Ürün Ağaçları', 'boms'],
 	['Düzenle']
 ])}}
 @endsection

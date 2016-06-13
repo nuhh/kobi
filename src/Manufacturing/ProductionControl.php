@@ -119,7 +119,9 @@
 		}
 
 		public function degerlendir() {
-			print_r($this->total);
+			//print_r($this->resultOfNeededTableParts);
+			//print_r($this->resultOfRotations);
+			
 			foreach ($this->total as $anaItemId => $altItemler) {
 				if (($this->resultOfRotations[$anaItemId] == true) and ($this->resultOfNeededTableParts[$anaItemId] == true)) {
 					$e = PONP::where('production_order_id', $this->productionOrderId)->where('part_id', $anaItemId)->first();
@@ -141,7 +143,6 @@
 						];
 
 						Lots::create($stogaEkle);
-
 					}
 
 					foreach (POCP::where('production_order_id', $this->productionOrderId)->get() as $k) {

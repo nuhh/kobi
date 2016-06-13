@@ -4,7 +4,7 @@
 <h3 class="page-title"> Yeni Parça </h3>
 <div class="row">
 	<div class="col-md-12">
-		{{open('newPart')}}
+		{{open('newBom')}}
 			<div class="form-body">
 			{{text('BOM Kodu', 'bom_code')}}
 			{{text('BOM Başlık', 'title')}}

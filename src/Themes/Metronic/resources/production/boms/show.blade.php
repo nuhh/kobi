@@ -4,11 +4,11 @@
 <h3 class="page-title"> Parça Detayları </h3>
 	<table class="table table-bordered">
 		<tr>
-			<th>{{trans('e.bomCode')}}</th>
+			<th>Ürün Ağacı Kodu</th>
 			<td>{{$detail['bom_code']}}</td>
 		</tr>
 		<tr>
-			<th>{{trans('e.bomTitle')}}</th>
+			<th>Ürün Ağacı Başlığı</th>
 			<td>{{$detail['title']}}</td>
 		</tr>
 		<tr>
@@ -18,8 +18,8 @@
 					<table class="table table-bordered">
 						<thead>
 							<tr>
-								<th>{{trans('e.part')}}</th>
-								<th>{{trans('e.transactions')}}</th>
+								<th>Parça</th>
+								<th>İşlemler</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -32,20 +32,20 @@
 						</tbody>
 					</table>
 				@else
-					{{trans('thereIsNoComposedPart')}}
+					Oluşacak Parça Yok
 				@endif
 			</td>
 		</tr>
 		<tr>
-			<th>{{trans('e.neededParts')}}</th>
+			<th>Gerekli Parçalar</th>
 			<td>
 				@if($detail->getNeededParts->count()>0)
 					<table class="table table-bordered">
 						<thead>
 							<tr>
-								<th>{{trans('e.part')}}</th>
+								<th>Parça</th>
 								<th>Adet</th>
-								<th>{{trans('e.transactions')}}</th>
+								<th>İşlemler</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -59,45 +59,45 @@
 						</tbody>
 					</table>
 				@else
-					{{trans('thereIsNoNeededPart')}}
+					Gerekli parça yok
 				@endif
 			</td>
 		</tr>
 		<tr>
-			<th>{{trans('e.connectedPartsForBom')}}</th>
+			<th>Bağlı Parçalar</th>
 			<td>
 				@if($detail->getConnectedParts->count()>0)
 					<table class="table table-bordered">
 						<thead>
 							<tr>
-								<th>{{trans('e.part')}}</th>
-								<th>{{trans('e.transactions')}}</th>
+								<th>Parça</th>
+								<th>İşlemler</th>
 							</tr>
 						</thead>
 						<tbody>
 							@foreach($detail->getConnectedParts as $e)
 								<tr>
 									<td>{{$e->getItem['title']}}</td>
-									<td>{{tableTool(trans('e.remove'), 'removeConnectionPartBom', $e['id'])}}</td>
+									<td>{{tableTool('Kaldır', 'removeConnectionPartBom', $e['id'])}}</td>
 								</tr>
 							@endforeach
 						</tbody>
 					</table>
 				@else
-					{{trans('e.thereIsNoConnectedPartForBom')}}
+					Bağlı parça yok
 				@endif
 			</td>
 		</tr>
 		<tr>
-			<th>{{trans('e.connectedRotationsForBom')}}</th>
+			<th>Bağlı rotalar</th>
 			<td>
 				@if($detail->getConnectedRoutes->count()>0)
 					<table class="table table-bordered">
 						<thead>
 							<tr>
-								<th>{{trans('e.route')}}</th>
-								<th>{{trans('e.description')}}</th>
-								<th>{{trans('e.transactions')}}</th>
+								<th>Rota</th>
+								<th>Açıklama</th>
+								<th>İşlemler</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -106,7 +106,7 @@
 									<td>{{$e->getRoute['title']}}</td>
 									<td>
 										@if($e['default']==2)
-											{{trans('e.default')}}
+											Öntanımlı
 										@endif
 									</td>
 									<td>
@@ -122,7 +122,7 @@
 						</tbody>
 					</table>
 				@else
-					{{trans('e.thereIsNoConnectedRotationForBom')}}
+					Bağlı rotasyon yok
 				@endif
 			</td>
 		</tr>

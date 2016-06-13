@@ -45,12 +45,12 @@
 										<li>
 											@if($k['remainder']>0)
 												@if($k->getUygunLotlar->count()>0)
-													<a href="{{route('consumeProductionNeededParts', $k['id'])}}">{{trans('e.consume')}}</a>
+													<a href="{{route('consumeProductionNeededParts', $k['id'])}}">Tüket</a>
 												@else
-													{{trans('e.thereIsNotInInventory')}}
+													Depoda tanımlı parça yok
 												@endif
 											@else
-												{{trans('e.completed')}}
+												Tamamlandı
 											@endif
 										</li>
 									</ul>
@@ -63,7 +63,7 @@
 							<td>{{numberFormat($k['quantity'])}}</td>
 							<td>{{numberFormat($k['reserved'])}}</td>
 							<td>
-								{{trans('e.lowerPartOfProduction')}} 
+								Üretimin Alt Parçası
 							</td>
 							<td>
 								@foreach($k->emirId($detail['id'])->itemId($k['part_id'])->get() as $key => $e)
@@ -82,12 +82,12 @@
 										<li>
 											@if($k['remainder']>0)
 												@if($k->getUygunLotlar->count()>0)
-													<a href="{{route('consumeProductionNeededParts', $k['id'])}}">{{trans('e.consume')}}</a>
+													<a href="{{route('consumeProductionNeededParts', $k['id'])}}">Tüket</a>
 												@else
-													{{trans('e.thereIsNotInInventory')}}
+													Depoda tanımlı parça yok
 												@endif
 											@else
-												{{trans('e.completed')}}
+												Tamamlandı
 											@endif
 										</li>
 									</ul>
@@ -116,12 +116,12 @@
 								</button>
 									<ul class="dropdown-menu" role="menu">
 									<li>
-										<a href="{{route('finishProductionRotation', $k['id'])}}">{{trans('e.complete')}}</a>
+										<a href="{{route('finishProductionRotation', $k['id'])}}">Tamamla</a>
 									</li>
 								</ul>
 							</div>
 						@else
-							{{trans('e.completed')}}
+							Tamamlandı
 						@endif
 					</td>
 				</tr>
@@ -131,8 +131,8 @@
 	<h3>Üretim Sonucu Oluşacak Parçalar</h3>
 	<table class="table table-bordered">
 		<tr>
-			<th>{{trans('e.part')}}</th>
-			<th>{{trans('e.quantity')}}</th>
+			<th>Parça</th>
+			<th>Adet</th>
 		</tr>
 		@foreach($olusacaklar as $e)
 			<tr>

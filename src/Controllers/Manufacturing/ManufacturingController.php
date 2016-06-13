@@ -132,7 +132,7 @@
 
 			ProductionControl::fire($detay['production_order_id']);
 
-			return redirectTo('manufacturing');
+			return redirectTo('productionOrders');
 		}
 		
 		/**
